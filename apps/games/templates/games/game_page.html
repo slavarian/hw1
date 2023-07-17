@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- mobile metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- site metas -->
+<title>Video</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">	
+<!-- bootstrap css -->
+<!-- bootstrap css -->
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+<!-- style css -->
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<!-- Responsive-->
+<link rel="stylesheet" href="/static/css/responsive.css">
+<!-- fevicon -->
+<link rel="icon" href="/static/images/fevicon.png" type="image/gif" />
+<!-- Scrollbar Custom CSS -->
+<link rel="stylesheet" href="/static/css/jquery.mCustomScrollbar.min.css">
+<!-- Tweaks for older IEs-->
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<!-- owl stylesheets --> 
+<link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+<link rel="stylesheet" href="/static/css/my.css">
+</head>
+</head>
+<body>
+	<!-- header section start -->
+	<div class="header_section">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="product.html">OUR PRODUCTS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="video.html">VIDEO GAMES</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="remot.html">REMOT CONTROL</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">CONTACT US</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><img src="images/search-icon.png"></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">SIGN IN</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">REGISTER</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+	</div>
+	<!-- header section end -->
+  <main>
+    <div class="block">
+        
+        <div class="lb">
+            <div class="title">
+                <h2 id="h2b">{{ game.name }}</h2>
+            </div>
+            <img src="https://play-lh.googleusercontent.com/VSwHQjcAttxsLE47RuS4PqpC4LT7lCoSjE7Hx5AW_yCxtDvcnsHHvm5CTuL5BPN-uRTP" alt="" class="imgg">
+       
+        </div>
+        <div class="rb">
+            <h2 class="h2d">{{ game.name }}</h2>
+            <h2 class="h2d">Жанры:
+                {% for g in game.genres.all %}
+                 <button type="button" class="btn btn-primary"><p>{{ g.name }}</p></button>
+                 {% endfor %}
+            </h2>
+                <h2 class="h2d">Издатель: <button type="button" class="btn btn-warning"><p>{{ game.company }}</p></button></h2>
+                <h2 class="h2d">Рейтинг:<button  class="btn btn-success" id="s">9.5</button></h2>
+                <h2 class="h2d">Цена: {{ game.price }} <button  class="btn btn-success">Купить</button></h2>
+            
+        </div>
+        
+    </div>
+    <div class="foot">
+        <div class="fl">
+            <img class="img1" src="data:image/jpeg;base64,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" alt="">
+            <img class="img1" src="https://i.ytimg.com/vi/Nee4VxRk4cA/maxresdefault.jpg" alt="">
+            <img class="img1" src="https://king-of-avalon.com/wp-content/uploads/2021/11/est-li-herobrin-v-minecraft-bedrock-edition-1280x720.jpg" alt="">
+        </div>
+        <div class="fr">
+            <div class="frr">
+            <h2 class="h2d">Описание игры:</h2>
+            <h3>МАЙНКРАЙТ ЭТО ЖИЗНЬ!!!!</h3>
+            <h3>да ты чё ..... Б********************я</h3>
+            <h3>ммм повезло повезло</h3>
+
+            </div>
+        </div>
+    </div>
+  </main>
+  <!-- footer section start -->
+  <div class="section_footer margin_top_2">
+      <div class="container"> 
+          <div class="footer_section_2">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                  <h2 class="account_text">About Us</h2>
+                  <p class="ipsum_text_2">dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quisdotempor incididunt r</p>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                  <h2 class="account_text">Useful Link</h2>
+                  <div class="useful_link">
+                    <ul>
+                      <li><a href="#">Video games</a></li>
+                      <li><a href="#">Remote control</a></li>
+                      <li><a href="#">3d controller</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                <h2 class="account_text">Contact Us</h2>
+                <p class="ipsum_text_2">dolor sit amet, consectetur magna aliqua. quisdotempor incididunt ut e </p>
+                </div>
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <h2 class="account_text">Newsletter</h2>
+            <input type="" class="email_text" placeholder="Enter Your Email" name="Enter Your Email">
+            <button class="subscribr_bt">SUBSCRIBE</button>
+          </div>
+        </div>
+      </div>
+      <div class="social_icon">
+        <ul>
+          <li><a href="#"><img src="images/fb-icon.png"></a></li>
+          <li><a href="#"><img src="images/twitter-icon.png"></a></li>
+          <li><a href="#"><img src="images/linkdin-icon.png"></a></li>
+          <li><a href="#"><img src="images/instagram-icon.png"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- footer section end -->
+  <!-- copyright section start -->
+  <div class="copyright_section">
+    <div class="container">
+      <p class="copyright_text">Copyright 2020 All Right Reserved By <a href="https://html.design/"> Free html Templates</p>
+    </div>
+  </div>
+  <!-- copyright section end -->
+  <!-- Javascript files-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <!-- sidebar -->
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/custom.js"></script>
+    <!-- javascript --> 
+    <script src="js/owl.carousel.js"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    $(".fancybox").fancybox({
+        openEffect: "none",
+        closeEffect: "none"
+        });
+    </script>
+</body>
+</html>
